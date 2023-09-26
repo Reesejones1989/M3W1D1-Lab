@@ -43,6 +43,9 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static('public')); //tells express to try to match requests with files in the directory called 'public'
+
+
 app.get('/fruits/seed', async (req, res)=>{
     try {
         await Fruit.create([
